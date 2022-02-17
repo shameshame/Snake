@@ -1,0 +1,7 @@
+@mixin flex_settings($direction:row,$wrap:nowrap,$align_main_axis:start , $align_cross_axis:start) {
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $align_main_axis;
+    align-items: $align_cross_axis;
+    flex-wrap: $wrap;
+}
