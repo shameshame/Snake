@@ -234,6 +234,7 @@ class Game {
                this.head.x >= this.food.left && !this.getsOffYBounds(); 
     }
 
+    
     foodOnTheRight(){
        
         return this.head.right >= this.food.left && 
@@ -404,8 +405,7 @@ class Game {
 }
 
 
-let squares = [new Square(),new Square(),new Square(),new Square(),new Square(),new Square(),new Square(),new Square(),new Square()]
-let game = new Game(4,9,squares,"Slow");
+
 
 
 
