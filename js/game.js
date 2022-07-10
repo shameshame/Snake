@@ -352,13 +352,12 @@ class Game {
        },this.timer);
     }
 
-    //Still in progress.....
+   
     finalResult(){
-        let finalResult = document.querySelector(".final-result");
-        finalResult.innerHTML=(this.theRecordIsBroken()? `NEW HIGHSCORE IS ${this.points}`
-                                :`YOUR SCORE IS ${this.points}`);
         
-        finalResult.style.display="block";
+        let finalResult = document.querySelector(".score")
+        finalResult.innerHTML=(this.theRecordIsBroken()?`GAME OVER !!! <br>NEW RECORD IS ${this.points}`
+                                                       :`GAME OVER !!! <br>YOUR SCORE IS ${this.points}`);
     }
 
     theRecordIsBroken(){
@@ -379,6 +378,7 @@ class Game {
             if(this.gameOver()){
                 clearInterval(run);
                 this.pendingDirections=[];
+                this.finalResult();
                 this.snakeIsDying();
             }
                //These 4 lines have to be taken to a separate method
