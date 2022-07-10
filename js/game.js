@@ -69,14 +69,16 @@ class Game {
         this.gameboard = document.querySelector('.gameboard');
         let cellEvenRow = "<section class='cell cell-even-row col-1'></section>" ;
         let cellOddRow = "<section class='cell cell-odd-row col-1'></section>" ;
-        
-        for(let row=0;row<rows;row++){
+       
+        [...Array(rows).keys()].forEach(row=>{
             let entry = document.createElement('section');
             entry.classList.add("row","g-0","line");
             Utilities.is_Even(row) ?entry.innerHTML+= cellEvenRow.repeat(columns)
                          :entry.innerHTML+= cellOddRow.repeat(columns);
             this.gameboard.append(...[entry]);
-        }
+        })
+        
+        
     }
 
     setSnake(squares){
